@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>react</title>
+  <script src="https://unpkg.com/react@15/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script type="text/babel">
+  // 绑定模板
+  let data = {
+    name: '张三',
+    age: 28,
+    from: 'china',
+    toys: ['DJI', 'Canon', 'Nikon']
+  }
+  const element = (
+    <div className="camel">
+      <label htmlFor="camel2">名字:{data.name}</label>
+      年龄:{data.age},国籍:{data.from}
+      <div>
+        {data.toys.map(function (el) {
+          return (
+            <div key={el.toString()}>
+              <img alt={el.toString()}/>
+              <span>{el},</span>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+  //todo data-* aria-*
+  ReactDOM.render(
+    element,
+    document.getElementById('root')
+  );
+</script>
+</html>

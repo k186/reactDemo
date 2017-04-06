@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>react</title>
+  <script src="https://unpkg.com/react@15/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script type="text/babel">
+  /*functional components*/
+  function Welcome (props) {
+    return <h1>Hello,{props.name}</h1>
+  }
+  /*ES6 class*/
+  class Welcome2 extends React.Component {
+    render () {
+      return <h1>Hello,{props.name}</h1>
+    }
+  }
+  let names = ['k186', 'Nikon', 'Canon']
+  const element = <div>{names.map(function (el, i) {
+  	return <Welcome name={el.toString()} key={i}/>
+  })}</div>
+  ReactDOM.render(
+    element,
+    document.getElementById('root')
+  )
+</script>
+</html>

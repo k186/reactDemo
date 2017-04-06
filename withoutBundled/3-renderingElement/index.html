@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>react</title>
+  <script src="https://unpkg.com/react@15/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script type="text/babel">
+  /*
+   * 数据驱动
+   * React elements are immutable. Once you create an element,
+   * you can't change its children or attributes.
+   * An element is like a single frame in a movie:
+   * it represents the UI at a certain point in time.
+   * With our knowledge so far, the only way to update the UI is to create a new element,
+   * and pass it to ReactDOM.render().
+   * 要更新UI 就把某个组件的dom 重新渲染一次，
+   * */
+  function tick () {
+    const element = (
+      <div>
+        {new Date().toLocaleTimeString()}
+      </div>
+    )
+
+    ReactDOM.render(
+      element,
+      document.getElementById('root')
+    );
+  }
+
+  setInterval(tick, 1000)
+</script>
+</html>
