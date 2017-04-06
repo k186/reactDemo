@@ -12,3 +12,14 @@ babel
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 ```
+
+更新UI
+```javascript
+/*通过*/ 
+this.setState({key:value})
+/*异步更新*/
+this.setState(function(prevState,props) {
+  
+})
+/* 这里跟vue 有差别 vue里面是每个组件的data 会自动更新到UI,react 需要使用setState方法,异步VUE里面还没有接触过*/
+```
