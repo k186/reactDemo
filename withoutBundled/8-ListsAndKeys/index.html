@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>react</title>
+  <script src="../react/react.js"></script>
+  <script src="../react/react-dom.js"></script>
+  <script src="../react/browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script type="text/babel">
+  const Numbers = [1, 2, 3, 4, 5, 6];
+  class ListComp extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state={listItem:props.listItem}
+    }
+    render() {
+      const liItems = this.state.listItem.map((el, index) =>{
+          return<li key={index}>{el*2}</li>
+      })
+      /*const liItems = this.state.listItem.map((el, index) =>
+        <li key={index}>{el*2}</li>
+      )*/
+      return (
+        <ul>{liItems}</ul>
+      )
+    }
+  }
+  ReactDOM.render(
+    <ListComp listItem={Numbers}/>,
+    document.getElementById('root')
+  )
+</script>
+</html>
