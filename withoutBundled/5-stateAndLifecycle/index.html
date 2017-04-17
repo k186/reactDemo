@@ -11,23 +11,27 @@
 <div id="root"></div>
 </body>
 <script type="text/babel">
-  class Clock extends React.Component{
-  	constructor (props){
-  		super(props)
-      this.state ={date:new Date()}
+  class Clock extends React.Component {
+    constructor (props) {
+      super(props)
+      this.state = {date: new Date()}
     }
-    componentDidMount(){
-  		this.timerID=setInterval(()=>this.tick())
+
+    componentDidMount () {
+      this.timerID = setInterval(() => this.tick())
     }
-    componentWillUnmount() {
+
+    componentWillUnmount () {
       clearInterval(this.timerID);
     }
-    tick(){
-    	this.setState({
-        date:new Date()
+
+    tick () {
+      this.setState({
+        date: new Date()
       })
     }
-    render(){
+
+    render () {
       return (
         <div>
           <h1>Hello, world!</h1>
