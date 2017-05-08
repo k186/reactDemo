@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>react</title>
+  <script src="../react/react.js"></script>
+  <script src="../react/react-dom.js"></script>
+  <script src="../react/browser.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script type="text/babel">
+  /* https://facebook.github.io/react/docs/forms.html */
+  class NameForm extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {value: ''};
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleChange(event) {
+      this.setState({value:event.target.value});
+    }
+    handleSubmit(event) {
+      alert(`submitted:${this.state.value}`);
+      event.preventDefault();
+    }
+    /* 涉及react 方法 属性 双向绑定等 不要写 “” ；jsx {}就表示了这段用js 解析 */
+    render(){
+      return(
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Name:
+            <input type="text" value={this.state.value} onChange={this.handleChange}/>
+          </label>
+          <input type="submit" value="Submit"/>
+        </form>
+      )
+    }
+  }
+  ReactDOM.render(
+    <NameForm />,
+    document.getElementById('root')
+  )
+</script>
+</html>
