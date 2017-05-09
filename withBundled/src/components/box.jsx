@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import logo from '@static/32423.jpg';
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <div className="App">
         <div className="App-header">
@@ -17,5 +17,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
