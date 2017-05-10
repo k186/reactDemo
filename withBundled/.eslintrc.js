@@ -22,6 +22,8 @@ module.exports = {
     // ; end
     'semi': 0,
     // no-unused-vars
-    'no-unused-vars':0
+    'no-unused-vars':0,
+    //space-before-function-paren
+    'space-before-function-paren':0
   }
 }
