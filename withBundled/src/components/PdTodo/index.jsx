@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import PdItem from '@component/PdItem'
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 import './pdtodo.scss'
 
 class PdTodo extends Component {
@@ -26,7 +27,10 @@ class PdTodo extends Component {
       <div className="pd-todo">
         <input type="text" className="pd-todo-input" ref="todoInput" onKeyDown={this.handleInput}/>
         <ul className="pd-todo-list">
-          {this.props.listData.map((el, index) => <PdItem itemChange={this.handleItemChange} key={index} data={el} index={index}/>)}
+          <CSSTransitionGroup transitionName="example" transitionEnterTimeout={300} transitionLeaveTimeout={300} transitionAppear={true}
+          transitionAppearTimeout={2000}>
+            {this.props.listData.map((el, index) => <PdItem itemChange={this.handleItemChange} key={el.value} data={el} index={index}/>)}
+          </CSSTransitionGroup>
         </ul>
       </div>
     )
