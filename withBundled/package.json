@@ -8,7 +8,7 @@
   },
   "author": "k186",
   "license": "MIT",
-  "devDependencies":{
+  "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.4.0",
@@ -46,5 +46,8 @@
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.9"
   }
 }
