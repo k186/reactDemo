@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "prop-types": "^15.5.9",
+    "transform-runtime": "0.0.0",
     "webpack-merge": "^4.1.0"
   }
 }
