@@ -49,6 +49,7 @@
     "webpack-hot-middleware": "^2.18.0"
   },
   "dependencies": {
-    "prop-types": "^15.5.9"
+    "prop-types": "^15.5.9",
+    "webpack-merge": "^4.1.0"
   }
 }
