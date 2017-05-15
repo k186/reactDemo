@@ -29,7 +29,7 @@ class PdTodo extends Component {
         <ul className="pd-todo-list">
           <CSSTransitionGroup transitionName="example" transitionEnterTimeout={300} transitionLeaveTimeout={300} transitionAppear={true}
           transitionAppearTimeout={2000}>
-            {this.props.listData.map((el, index) => <PdItem itemChange={this.handleItemChange} key={el.value} data={el} index={index}/>)}
+            {this.props.listData.map((el, index) => <PdItem itemChange={this.handleItemChange} key={el.id} data={el} index={index}/>)}
           </CSSTransitionGroup>
         </ul>
       </div>

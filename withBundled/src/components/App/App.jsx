@@ -8,16 +8,19 @@ class App extends Component {
     this.state = {
       todoData: [
         {
-          value: '大家阿里三闾大夫奥斯卡',
-          status: false
+          value: 'todo1',
+          status: false,
+          id: 1
         },
         {
-          value: '范德萨',
-          status: false
+          value: 'todo2',
+          status: false,
+          id: 2
         },
         {
-          value: '范德萨333',
-          status: false
+          value: 'todo3',
+          status: false,
+          id: 3
         }
       ]
     };
@@ -26,7 +29,12 @@ class App extends Component {
   }
 
   insert(value) {
-    let data = {value: value, status: false};
+    value = value.replace(/(^\s*)|(\s*$)/g, '');
+    if (value === '') {
+      return false
+    }
+    let id = this.state.todoData[this.state.todoData.length - 1] ? this.state.todoData[this.state.todoData.length - 1].id : 0
+    let data = {value: value, status: false, id: id + 1};
     let datas = this.state.todoData;
     datas.push(data)
     this.setState({todoData: datas})
